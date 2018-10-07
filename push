@@ -7,10 +7,10 @@ IsSameConfig () {
      # ローカル・リポジトリ名を取得する
     reponame=$(basename "${repo_path}")
     if [ -f "${repo_path}/.git/config" ]; then
-          # ./git/config [remote "origin"] url キーからユーザ名とリポジトリ名を取得する
-        local gitconfig_userrepo=($(python3 "$HOME/root/script/py/tool/git/config/Reader.py" "${repo_path}"))
-        local gitconfig_user=${gitconfig_userrepo[0]}
-        local gitconfig_repo=${gitconfig_userrepo[1]}
+        # .git/config [remote "origin"] url キーからユーザ名とリモート・リポジトリ名を取得する（他ユーザのリポジトリにpushしているとそのユーザになってしまう！）
+#        local gitconfig_userrepo=($(python3 "$HOME/root/script/py/tool/git/config/Reader.py" "${repo_path}"))
+#        local gitconfig_user=${gitconfig_userrepo[0]}
+#        local gitconfig_repo=${gitconfig_userrepo[1]}
 
         # .git/config からユーザ名とリモート・リポジトリ名を取得する（git clone したものだと取得できない！）
 #        local gitconfig_user=`git config --get user.name`
